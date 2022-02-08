@@ -62,7 +62,7 @@ The API endpoint will return a similar payload to this:
 
 This endpoint will soon also allow us to search for medications using a string-based search query parameter.
 
-An example URL of what this may look like would be: `http://laravel-tech-test.test/medications/?search=Para`
+An example URL of what this may look like would be: `http://laravel-tech-test.test/api/medications?search=Para`
 
 Important to note is that our front-ends only need the `id` and `name`, however, we use different domain logic at Stead Lane and want the `id` field to be exposed as "code". Ideally, we would like the Laravel response to look like this:
 
@@ -75,7 +75,7 @@ Important to note is that our front-ends only need the `id` and `name`, however,
         },
         {
             "code": 71510,
-            "name": "Paraldehyde"
+            "name": "Nurofen"
         }
     ]
 }
