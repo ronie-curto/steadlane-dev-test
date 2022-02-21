@@ -14,4 +14,14 @@ class Patient extends Model
     protected $casts = [
         'date_of_birth' => 'date',
     ];
+
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'first_name', 'last_name', 'date_of_birth', 'email'
+    ];
 }
