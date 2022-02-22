@@ -35,4 +35,12 @@ class Patient extends Model
     {
         return $this->first_name . ' ' . $this->last_name;
     }
+
+    /**
+     * Relationship - The medications assigned to a patient
+     */
+    public function medications()
+    {
+        return $this->belongsToMany('App\Medication')->withPivot('dosage', 'startDate', 'completionDate')->withTimestamps();
+    }
 }

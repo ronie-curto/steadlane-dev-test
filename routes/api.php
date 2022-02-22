@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('patients', 'PatientController')->except('destroy');
     
+    Route::get('patients/{patient}/medications', [MedicationController::class, 'listPatientMedication']);
+    Route::post('patients/{patient}/medications/store', [MedicationController::class, 'storePatientMedication']);
+    Route::patch('patients/{patient}/medications/{medication}', [MedicationController::class, 'updatePatientMedication']);
+    
     Route::get('medications', [MedicationController::class, 'index']);
 });
 
